@@ -92,6 +92,8 @@ VIDEO_Init(
 #elif defined (GEKKO)
    gpScreenReal = SDL_SetVideoMode(640, 480, 8,
       SDL_SWSURFACE | (fFullScreen ? SDL_FULLSCREEN : 0));
+#elif defined (ANDROID)
+   gpScreenReal = SDL_SetVideoMode(320, 240, 8, SDL_SWSURFACE);
 #elif defined (PSP)
    gpScreenReal = SDL_SetVideoMode(320, 240, 8, SDL_SWSURFACE | SDL_FULLSCREEN);
 #else

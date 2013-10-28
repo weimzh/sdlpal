@@ -537,6 +537,9 @@ PAL_AdditionalCredits(
 #ifdef DINGOO
       "  DINGOO & Dingux \xB2\xBE\xB4\xD3 (c) 2011, Rikku2000.",
 #endif
+#ifdef ANDROID
+      "  ANDROID \xB2\xBE\xB4\xD3 (c) 2013, Rikku2000.",
+#endif
       " ",
       "\xA5\xBB\xB5\x7B\xA6\xA1\xAC\x4F\xA6\xDB\xA5\xD1\xB3\x6E\xC5\xE9\xA1\x41\xAB\xF6\xB7\xD3"
       " GNU General",

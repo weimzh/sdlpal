@@ -93,7 +93,7 @@ extern "C"
 #if SDL_MAJOR_VERSION == 1 && SDL_MINOR_VERSION <= 2
 #define PAL_HAS_CD            1
 #endif
-#if !defined (CYGWIN) && !defined (DINGOO) && !defined (GPH) && !defined (GEKKO)
+#if !defined (CYGWIN) && !defined (DINGOO) && !defined (GPH) && !defined (GEKKO) && !defined (ANDROID)
 #define PAL_HAS_MP3           1
 #endif
 #endif

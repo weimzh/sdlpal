@@ -20,7 +20,7 @@
 
 #include "main.h"
 
-#if !defined (CYGWIN) && !defined (DINGOO) &&  !defined (GEKKO) && !defined (GPH)
+#if !defined (CYGWIN) && !defined (DINGOO) &&  !defined (GEKKO) && !defined (GPH) && !defined (ANDROID)
 
 static INT iMidCurrent = -1;
 static BOOL fMidLoop = FALSE;

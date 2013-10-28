@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+		package="jp.rikku2000.sdlpal"
+      android:versionCode="20131014"
+      android:versionName="1.0.0.4"
+		android:installLocation="preferExternal">
+		<application android:icon="@drawable/icon" android:label="@string/app_name">
+			<activity android:name=".MainActivity"
+				android:label="@string/app_name"
+				android:icon="@drawable/icon"
+				android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|fontScale|uiMode|screenSize|smallestScreenSize"
+				android:launchMode="singleInstance">
+				<intent-filter>
+					<action android:name="android.intent.action.MAIN" />
+					<category android:name="android.intent.category.LAUNCHER" />
+				</intent-filter>
+			</activity>
+		</application>
+		<uses-sdk android:minSdkVersion="4" android:targetSdkVersion="8"/>
+		<uses-permission android:name="android.permission.WAKE_LOCK"></uses-permission>
+		<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+		<uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+	</manifest> 
