@@ -19,7 +19,7 @@ freely, subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-package jp.rikku2000.sdlpal;
+package com.codeplex.sdlpal;
 
 import android.app.Activity;
 import android.content.Context;

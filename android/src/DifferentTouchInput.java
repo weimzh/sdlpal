@@ -22,7 +22,7 @@
  2013/9 Modified by Martin Dieter
  */
 
-package jp.rikku2000.sdlpal;
+package com.codeplex.sdlpal;
 
 import android.app.Activity;
 import android.content.Context;

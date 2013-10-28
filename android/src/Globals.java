@@ -22,7 +22,7 @@ freely, subject to the following restrictions:
 2012/7 Modified by AKIZUKI Katane
 */
 
-package jp.rikku2000.sdlpal;
+package com.codeplex.sdlpal;
 
 import android.app.Activity;
 import android.content.pm.ActivityInfo;

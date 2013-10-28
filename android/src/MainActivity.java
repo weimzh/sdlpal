@@ -25,7 +25,7 @@ freely, subject to the following restrictions:
  2013/9 Modified by Martin Dieter
  */
 
-package jp.rikku2000.sdlpal;
+package com.codeplex.sdlpal;
 
 import java.io.File;
 import java.io.FileFilter;
