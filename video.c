@@ -93,7 +93,7 @@ VIDEO_Init(
    gpScreenReal = SDL_SetVideoMode(640, 480, 8,
       SDL_SWSURFACE | (fFullScreen ? SDL_FULLSCREEN : 0));
 #elif defined (ANDROID)
-   gpScreenReal = SDL_SetVideoMode(320, 240, 8, SDL_SWSURFACE);
+   gpScreenReal = SDL_SetVideoMode(320, 200, 8, SDL_SWSURFACE);
 #elif defined (PSP)
    gpScreenReal = SDL_SetVideoMode(320, 240, 8, SDL_SWSURFACE | SDL_FULLSCREEN);
 #else
@@ -247,7 +247,11 @@ VIDEO_UpdateScreen(
          SDL_UnlockSurface(gpScreenReal);
       }
 
+#ifdef ANDROID
+      SDL_UpdateRect(gpScreenReal, 0, 0, gpScreenReal->w, gpScreenReal->h);
+#else
       SDL_UpdateRect(gpScreenReal, dstrect.x, dstrect.y, dstrect.w, dstrect.h);
+#endif
    }
    else if (g_wShakeTime != 0)
    {

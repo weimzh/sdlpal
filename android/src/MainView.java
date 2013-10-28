@@ -635,7 +635,7 @@ public class MainView extends AbsoluteLayout
 			//
 		} else if(d == MENU_ITEM_ID_QUIT){
 			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
-			alertDialogBuilder.setTitle("Quit");
+			alertDialogBuilder.setTitle("Close application?");
 			alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener(){
 				public void onClick(DialogInterface dialog, int whichButton) {
 					exitApp();

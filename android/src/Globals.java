@@ -68,7 +68,25 @@ class Globals {
 	};
 	
 	public static final String[] APP_NEED_FILENAME_ARRAY = {
-		"setup.dat|SETUP.DAT"
+		"abc.mkf",
+		"ball.mkf",
+		"data.mkf",
+		"fbp.mkf",
+		"fire.mkf",
+		"f.mkf",
+		"gop.mkf",
+		"map.mkf",
+		"mgo.mkf",
+		"m.msg",
+		"mus.mkf",
+		"pat.mkf",
+		"rgm.mkf",
+		"rng.mkf",
+		"sss.mkf",
+		"voc.mkf",
+		"wor16.asc",
+		"wor16.fon",
+		"word.dat"
 		// "example.dat",
 		// "hello.ogg"
 	};
@@ -84,7 +102,8 @@ class Globals {
 
 	public static final boolean CURRENT_DIRECTORY_NEED_WRITABLE = true;
 	public static final String[] CURRENT_DIRECTORY_PATH_TEMPLATE_ARRAY = {
-		"${SDCARD}/sdlpal"
+		"${SDCARD}/sdlpal",
+		"${SDCARD}/pal"
 		// "${SDCARD}/example",
 		// "${SDCARD}/hello",
 		// "/tmp/hello"
@@ -303,10 +322,14 @@ class Globals {
 		SDLKeyFunctionNameMap.put(new Integer(SDL_1_2_Keycodes.SDLK_LEFT), "Left");
 		SDLKeyFunctionNameMap.put(new Integer(SDL_1_2_Keycodes.SDLK_RIGHT), "Right");
 		
-		SDLKeyFunctionNameMap.put(new Integer(SDL_1_2_Keycodes.SDLK_RETURN), "Start");	// A
-		SDLKeyFunctionNameMap.put(new Integer(SDL_1_2_Keycodes.SDLK_ESCAPE), "Select");	// B
-		SDLKeyFunctionNameMap.put(new Integer(SDL_1_2_Keycodes.SDLK_z), "Hold");		// X
-		SDLKeyFunctionNameMap.put(new Integer(SDL_1_2_Keycodes.SDLK_x), "Hold");		// Y
+		SDLKeyFunctionNameMap.put(new Integer(SDL_1_2_Keycodes.SDLK_RETURN), "Enter");
+		SDLKeyFunctionNameMap.put(new Integer(SDL_1_2_Keycodes.SDLK_ESCAPE), "Cancel");
+		SDLKeyFunctionNameMap.put(new Integer(SDL_1_2_Keycodes.SDLK_a), "A");
+		SDLKeyFunctionNameMap.put(new Integer(SDL_1_2_Keycodes.SDLK_e), "E");
+		SDLKeyFunctionNameMap.put(new Integer(SDL_1_2_Keycodes.SDLK_f), "F");
+		SDLKeyFunctionNameMap.put(new Integer(SDL_1_2_Keycodes.SDLK_q), "Q");
+		SDLKeyFunctionNameMap.put(new Integer(SDL_1_2_Keycodes.SDLK_r), "R");
+		SDLKeyFunctionNameMap.put(new Integer(SDL_1_2_Keycodes.SDLK_w), "W");
 	}
 	
 	public static TreeMap<Integer,Integer> SDLKeyAdditionalKeyMap = new TreeMap<Integer,Integer>(); //do not change
@@ -356,10 +379,10 @@ class Globals {
 		SDLKeyAdditionalKeyMap.put(new Integer(GAMEPAD_BUTTON_ARROW_KEY_ARRAY[GAMEPAD_BUTTON_ARROW_DOWN_INDEX]),  new Integer(SDL_1_2_Keycodes.SDLK_DOWN));
 		SDLKeyAdditionalKeyMap.put(new Integer(GAMEPAD_BUTTON_ARROW_KEY_ARRAY[GAMEPAD_BUTTON_ARROW_LEFT_INDEX]),  new Integer(SDL_1_2_Keycodes.SDLK_LEFT));		
 		
-		SDLKeyAdditionalKeyMap.put(new Integer(GAMEPAD_BUTTON_ACTION_KEY_ARRAY[GAMEPAD_BUTTON_ACTION_UP_INDEX]),    new Integer(SDL_1_2_Keycodes.SDLK_z));		// X
-		SDLKeyAdditionalKeyMap.put(new Integer(GAMEPAD_BUTTON_ACTION_KEY_ARRAY[GAMEPAD_BUTTON_ACTION_RIGHT_INDEX]), new Integer(SDL_1_2_Keycodes.SDLK_x));		// Y
-		SDLKeyAdditionalKeyMap.put(new Integer(GAMEPAD_BUTTON_ACTION_KEY_ARRAY[GAMEPAD_BUTTON_ACTION_LEFT_INDEX]),  new Integer(SDL_1_2_Keycodes.SDLK_RETURN));	// A
-		SDLKeyAdditionalKeyMap.put(new Integer(GAMEPAD_BUTTON_ACTION_KEY_ARRAY[GAMEPAD_BUTTON_ACTION_DOWN_INDEX]),  new Integer(SDL_1_2_Keycodes.SDLK_ESCAPE));	// B
+		SDLKeyAdditionalKeyMap.put(new Integer(GAMEPAD_BUTTON_ACTION_KEY_ARRAY[GAMEPAD_BUTTON_ACTION_UP_INDEX]),    new Integer(SDL_1_2_Keycodes.SDLK_r));
+		SDLKeyAdditionalKeyMap.put(new Integer(GAMEPAD_BUTTON_ACTION_KEY_ARRAY[GAMEPAD_BUTTON_ACTION_RIGHT_INDEX]), new Integer(SDL_1_2_Keycodes.SDLK_RETURN));
+		SDLKeyAdditionalKeyMap.put(new Integer(GAMEPAD_BUTTON_ACTION_KEY_ARRAY[GAMEPAD_BUTTON_ACTION_LEFT_INDEX]),  new Integer(SDL_1_2_Keycodes.SDLK_e));
+		SDLKeyAdditionalKeyMap.put(new Integer(GAMEPAD_BUTTON_ACTION_KEY_ARRAY[GAMEPAD_BUTTON_ACTION_DOWN_INDEX]),  new Integer(SDL_1_2_Keycodes.SDLK_ESCAPE));
 		
 		// JoyStick Axis
 		SDLKeyAdditionalKeyMap.put(new Integer(JOYSTICK_AXIS_KEY_ARRAY[JOYSTICK_AXIS_UP_INDEX]),    new Integer(SDL_1_2_Keycodes.SDLK_UP));
@@ -373,10 +396,7 @@ class Globals {
 		SDLKeyAdditionalKeyMap.put(new Integer(JOYSTICK_AXISHAT_KEY_ARRAY[JOYSTICK_AXIS_LEFT_INDEX]),  new Integer(SDL_1_2_Keycodes.SDLK_LEFT));
 		
 		//Key
-		SDLKeyAdditionalKeyMap.put(new Integer(KeyEvent.KEYCODE_BACK), new Integer(SDL_1_2_Keycodes.SDLK_RETURN));	// A
-		SDLKeyAdditionalKeyMap.put(new Integer(KeyEvent.KEYCODE_BACK), new Integer(SDL_1_2_Keycodes.SDLK_ESCAPE));	// B
-		SDLKeyAdditionalKeyMap.put(new Integer(KeyEvent.KEYCODE_BACK), new Integer(SDL_1_2_Keycodes.SDLK_z));		// X
-		SDLKeyAdditionalKeyMap.put(new Integer(KeyEvent.KEYCODE_BACK), new Integer(SDL_1_2_Keycodes.SDLK_x));		// Y
+		SDLKeyAdditionalKeyMap.put(new Integer(KeyEvent.KEYCODE_BACK), new Integer(SDL_1_2_Keycodes.SDLK_ESCAPE));
 	}
 	
 	//Run Static Initializer

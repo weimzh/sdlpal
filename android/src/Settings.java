@@ -112,6 +112,9 @@ class Settings
 				curDirPathSet.add(curDirPathTemplate.replace("${SDCARD}", "/mnt/usbdisk"));
 				curDirPathSet.add(curDirPathTemplate.replace("${SDCARD}", "/sdcard"));
 				curDirPathSet.add(curDirPathTemplate.replace("${SDCARD}", "/sdcard/sd"));
+				curDirPathSet.add(curDirPathTemplate.replace("${SDCARD}", "/storage/sdcard"));
+				curDirPathSet.add(curDirPathTemplate.replace("${SDCARD}", "/storage/sdcard0"));
+				curDirPathSet.add(curDirPathTemplate.replace("${SDCARD}", "/storage/extSdCard"));
 			
 				storagePath = System.getenv("EXTERNAL_STORAGE");
 				if(storagePath != null){
