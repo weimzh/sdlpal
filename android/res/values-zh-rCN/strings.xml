@@ -66,4 +66,6 @@
 		<string name="touch_mode_trackpad">轨迹板</string>
 		<string name="touch_mode_gamepad">手柄</string>
 		<string name="close_appli">确认退出?</string>
+		<string name="key_cfg_mode">设置按键 (按菜单键退出)</string>
+		<string name="press_key_btn">请点击需要设置的按键</string>
 	</resources>

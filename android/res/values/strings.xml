@@ -66,4 +66,6 @@
 		<string name="touch_mode_trackpad">TrackPad</string>
 		<string name="touch_mode_gamepad">GamePad</string>
 		<string name="close_appli">Close application?</string>
+		<string name="key_cfg_mode">Key Config Mode ( END:MENU_KEY )</string>
+		<string name="press_key_btn">Press KEY/BUTTON</string>
 	</resources>

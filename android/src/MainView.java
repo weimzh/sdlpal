@@ -886,13 +886,13 @@ public class MainView extends AbsoluteLayout
 		mIsKeyConfigMode = true;
 		
 		mKeyConfigTextView = new TextView(getActivity());
-		mKeyConfigTextView.setText("Key Config Mode ( END:MENU_KEY )");
+		mKeyConfigTextView.setText(getResources().getString(R.string.key_cfg_mode));
 		mKeyConfigTextView.setTextColor(Color.WHITE);
 		mKeyConfigTextView.setBackgroundColor(Color.BLACK);
 		
 		addView(mKeyConfigTextView, new AbsoluteLayout.LayoutParams(mGLViewWidth, AbsoluteLayout.LayoutParams.WRAP_CONTENT, mGLViewX, mGLViewY));
 		
-		Toast.makeText(getActivity(), "Press KEY/BUTTON", Toast.LENGTH_LONG).show();
+		Toast.makeText(getActivity(), getResources().getString(R.string.press_key_btn), Toast.LENGTH_LONG).show();
 	}
 	
 	public void leaveKeyConfigMode()
