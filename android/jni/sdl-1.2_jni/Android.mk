@@ -26,13 +26,11 @@ SDL_SRCS := \
 	src/cpuinfo/*.c \
 	src/events/*.c \
 	src/file/*.c \
-	src/haptic/*.c \
 	src/joystick/*.c \
 	src/stdlib/*.c \
 	src/thread/*.c \
 	src/timer/*.c \
 	src/video/*.c \
-	src/main/*.c \
 	src/power/*.c \
 	src/thread/pthread/*.c \
 	src/timer/unix/*.c \
@@ -41,7 +39,6 @@ SDL_SRCS := \
 	src/video/android/*.c \
 	src/video/android/*.cpp \
 	src/joystick/dummy/*.c \
-	src/haptic/dummy/*.c \
 	src/loadso/dlopen/*.c \
 	src/atomic/dummy/*.c 
 
