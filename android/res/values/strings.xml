@@ -68,4 +68,5 @@
 		<string name="close_appli">Close application?</string>
 		<string name="key_cfg_mode">Key Config Mode ( END:MENU_KEY )</string>
 		<string name="press_key_btn">Press KEY/BUTTON</string>
+		<string name="select_key_func">Select Key Function</string>
 	</resources>

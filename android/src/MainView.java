@@ -848,7 +848,7 @@ public class MainView extends AbsoluteLayout
 			}
 			
 			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
-			alertDialogBuilder.setTitle("Select Key Function : " + keyCode);
+			alertDialogBuilder.setTitle(getResources().getString(R.string.select_key_func) + " : " + keyCode);
 			alertDialogBuilder.setItems(nameArray, new OnClickListenerForKeyConfigDialog(this, keyCode, keyArray, nameArray));
 			alertDialogBuilder.setCancelable(true);
 			alertDialogBuilder.setNegativeButton("Cancel", null);

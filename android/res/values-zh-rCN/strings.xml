@@ -68,4 +68,5 @@
 		<string name="close_appli">确认退出?</string>
 		<string name="key_cfg_mode">设置按键 (按菜单键退出)</string>
 		<string name="press_key_btn">请点击需要设置的按键</string>
+		<string name="select_key_func">请选择按键功能</string>
 	</resources>
