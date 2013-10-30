@@ -123,16 +123,16 @@ public class MainActivity extends Activity {
 		curDirPath = buf.toString();
 
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-		alertDialogBuilder.setTitle("Error");
-		alertDialogBuilder.setMessage("Could not open directory.\n" + curDirPath);
+		alertDialogBuilder.setTitle(R.string.error);
+		alertDialogBuilder.setMessage(R.string.open_dir_error + "\n" + curDirPath);
 		if(quitting){
-			alertDialogBuilder.setPositiveButton("Quit", new DialogInterface.OnClickListener(){
+			alertDialogBuilder.setPositiveButton(R.string.quit, new DialogInterface.OnClickListener(){
 				public void onClick(DialogInterface dialog, int whichButton) {
 					finish();
 				}
 			});
 		} else {
-			alertDialogBuilder.setPositiveButton("OK", null);
+			alertDialogBuilder.setPositiveButton(R.string.ok, null);
 		}
 		alertDialogBuilder.setCancelable(false);
 		AlertDialog alertDialog = alertDialogBuilder.create();
@@ -168,7 +168,7 @@ public class MainActivity extends Activity {
 					{
 						TextView txt1 = new TextView(mActivity);
 						txt1.setTextSize(18.0f);
-						txt1.setText("Current Directory");
+						txt1.setText(R.string.current_dir);
 						txtLayout.addView(txt1, new LinearLayout.LayoutParams( LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
 						
 						mCurDirText = new TextView(mActivity);
@@ -178,7 +178,7 @@ public class MainActivity extends Activity {
 					mCurDirLayout.addView(txtLayout, new LinearLayout.LayoutParams( LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.FILL_PARENT, 1));
 					
 					mCurDirChgButton = new Button(mActivity);
-					mCurDirChgButton.setText("Change\nDirectory");
+					mCurDirChgButton.setText(R.string.change_dir);
 					mCurDirChgButton.setOnClickListener(this);
 					mCurDirLayout.addView(mCurDirChgButton, new LinearLayout.LayoutParams( LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.FILL_PARENT));
 				}
@@ -223,8 +223,8 @@ public class MainActivity extends Activity {
 					mDirListView.setAdapter(arrayAdapter);
 				} catch(Exception e){
 					AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(mActivity);
-					alertDialogBuilder.setTitle("Error");
-					alertDialogBuilder.setMessage("Could not open directory.\n" + Globals.CurrentDirectoryPathForLauncher);
+					alertDialogBuilder.setTitle(R.string.error);
+					alertDialogBuilder.setMessage(R.string.open_dir_error + "\n" + Globals.CurrentDirectoryPathForLauncher);
 					alertDialogBuilder.setPositiveButton("OK", null);
 					AlertDialog alertDialog = alertDialogBuilder.create();
 					alertDialog.show();
@@ -241,12 +241,12 @@ public class MainActivity extends Activity {
 			for(int i = 0; i < Globals.CurrentDirectoryValidPathArray.length; i ++){
 				items[i] = Globals.CurrentDirectoryValidPathArray[i];
 			}
-			items[items.length - 1] = "other...";
+			items[items.length - 1] = R.string.other;
 			
 			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(mActivity);
-			alertDialogBuilder.setTitle("Choose Directory");
+			alertDialogBuilder.setTitle(R.string.choose_dir);
 			alertDialogBuilder.setItems(items, this);
-			alertDialogBuilder.setNegativeButton("Cancel", null);
+			alertDialogBuilder.setNegativeButton(R.string.cancel, null);
 			alertDialogBuilder.setCancelable(true);
 			AlertDialog alertDialog = alertDialogBuilder.create();
 			alertDialog.show();
@@ -316,22 +316,22 @@ public class MainActivity extends Activity {
 				AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(mActivity);
 				alertDialogBuilder.setTitle(mDirBrowserCurDirPath);
 				alertDialogBuilder.setItems(dirPathArray, this);
-				alertDialogBuilder.setPositiveButton("Set Directory", new DialogInterface.OnClickListener(){
+				alertDialogBuilder.setPositiveButton(R.string.set_dir, new DialogInterface.OnClickListener(){
 					public void onClick(DialogInterface dialog, int whichButton) {	
 						Globals.CurrentDirectoryPathForLauncher = mDirBrowserCurDirPath;
 						Settings.SaveGlobals(mActivity);
 						loadCurrentDirectory();
 					}
 				});
-				alertDialogBuilder.setNegativeButton("Cancel", null);
+				alertDialogBuilder.setNegativeButton(R.string.cancel, null);
 				alertDialogBuilder.setCancelable(true);
 				mDirBrowserDialog = alertDialogBuilder.create();
 				mDirBrowserDialog.show();
 			} catch(Exception e){
 				AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(mActivity);
-				alertDialogBuilder.setTitle("Error");
-				alertDialogBuilder.setMessage("Could not open directory.\n" + mDirBrowserCurDirPath);
-				alertDialogBuilder.setPositiveButton("OK", null);
+				alertDialogBuilder.setTitle(R.string.error);
+				alertDialogBuilder.setMessage(R.string.open_dir_error + "\n" + mDirBrowserCurDirPath);
+				alertDialogBuilder.setPositiveButton(R.string.ok, null);
 				AlertDialog alertDialog = alertDialogBuilder.create();
 				alertDialog.show();
 			}
@@ -391,7 +391,7 @@ public class MainActivity extends Activity {
 							{
 								TextView txt1 = new TextView(mActivity);
 								txt1.setTextSize(18.0f);
-								txt1.setText("Execute Module");
+								txt1.setText(R.string.exec_module);
 								txtLayout.addView(txt1, new LinearLayout.LayoutParams( LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
 								
 								mExecuteModuleText = new TextView(mActivity);
@@ -403,11 +403,11 @@ public class MainActivity extends Activity {
 							
 							if(Globals.APP_MODULE_NAME_ARRAY.length >= 2){
 								Button btn = new Button(mActivity);
-								btn.setText("Change");
+								btn.setText(R.string.change);
 								btn.setOnClickListener(new OnClickListener(){
 									public void onClick(View v){
 										AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(mActivity);
-										alertDialogBuilder.setTitle("Execute Module");
+										alertDialogBuilder.setTitle(R.string.exec_module);
 										alertDialogBuilder.setItems(Globals.APP_MODULE_NAME_ARRAY, new DialogInterface.OnClickListener(){
 											public void onClick(DialogInterface dialog, int which)
 											{
@@ -416,7 +416,7 @@ public class MainActivity extends Activity {
 												Settings.SaveLocals(mActivity);
 											}
 										});
-										alertDialogBuilder.setNegativeButton("Cancel", null);
+										alertDialogBuilder.setNegativeButton(R.string.cancel, null);
 										alertDialogBuilder.setCancelable(true);
 										AlertDialog alertDialog = alertDialogBuilder.create();
 										alertDialog.show();
@@ -435,7 +435,7 @@ public class MainActivity extends Activity {
 							{
 								TextView txt1 = new TextView(mActivity);
 								txt1.setTextSize(18.0f);
-								txt1.setText("Video Depth");
+								txt1.setText(R.string.video_depth);
 								txtLayout.addView(txt1, new LinearLayout.LayoutParams( LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
 								
 								mVideoDepthText = new TextView(mActivity);
@@ -447,7 +447,7 @@ public class MainActivity extends Activity {
 							
 							if(Globals.VIDEO_DEPTH_BPP_ITEMS.length >= 2){
 								Button btn = new Button(mActivity);
-								btn.setText("Change");
+								btn.setText(R.string.change);
 								btn.setOnClickListener(new OnClickListener(){
 									public void onClick(View v){
 										String[] bppItems = new String[Globals.VIDEO_DEPTH_BPP_ITEMS.length];
@@ -456,7 +456,7 @@ public class MainActivity extends Activity {
 										}
 										
 										AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(mActivity);
-										alertDialogBuilder.setTitle("Video Depth");
+										alertDialogBuilder.setTitle(R.string.video_depth);
 										alertDialogBuilder.setItems(bppItems, new DialogInterface.OnClickListener(){
 											public void onClick(DialogInterface dialog, int which)
 											{
@@ -465,7 +465,7 @@ public class MainActivity extends Activity {
 												Settings.SaveLocals(mActivity);
 											}
 										});
-										alertDialogBuilder.setNegativeButton("Cancel", null);
+										alertDialogBuilder.setNegativeButton(R.string.cancel, null);
 										alertDialogBuilder.setCancelable(true);
 										AlertDialog alertDialog = alertDialogBuilder.create();
 										alertDialog.show();
@@ -484,7 +484,7 @@ public class MainActivity extends Activity {
 							{
 								TextView txt1 = new TextView(mActivity);
 								txt1.setTextSize(18.0f);
-								txt1.setText("Screen Aspect Ratio");
+								txt1.setText(R.string.aspect_ratio);
 								txtLayout.addView(txt1, new LinearLayout.LayoutParams( LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
 								
 								mScreenRatioText = new TextView(mActivity);
@@ -492,14 +492,14 @@ public class MainActivity extends Activity {
 								if(Locals.VideoXRatio > 0 && Locals.VideoYRatio > 0){
 									mScreenRatioText.setText("" + Locals.VideoXRatio + ":" + Locals.VideoYRatio);
 								} else {
-									mScreenRatioText.setText("Full");
+									mScreenRatioText.setText(R.string.full);
 								}
 								txtLayout.addView(mScreenRatioText, new LinearLayout.LayoutParams( LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
 							}
 							screenRatioLayout.addView(txtLayout, new LinearLayout.LayoutParams( LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1));
 							
 							Button btn1 = new Button(mActivity);
-							btn1.setText("Swap");
+							btn1.setText(R.string.swap);
 							btn1.setOnClickListener(new OnClickListener(){
 								public void onClick(View v){
 									int tmp = Locals.VideoXRatio;
@@ -508,7 +508,7 @@ public class MainActivity extends Activity {
 									if(Locals.VideoXRatio > 0 && Locals.VideoYRatio > 0){
 										mScreenRatioText.setText("" + Locals.VideoXRatio + ":" + Locals.VideoYRatio);
 									} else {
-										mScreenRatioText.setText("Full");
+										mScreenRatioText.setText(R.string.full);
 									}
 									Settings.SaveLocals(mActivity);
 								}
@@ -517,7 +517,7 @@ public class MainActivity extends Activity {
 							
 							if(Globals.VIDEO_RATIO_ITEMS.length >= 2){
 								Button btn = new Button(mActivity);
-								btn.setText("Change");
+								btn.setText(R.string.change);
 								btn.setOnClickListener(new OnClickListener(){
 									public void onClick(View v){
 										String[] ratioItems = new String[Globals.VIDEO_RATIO_ITEMS.length];
@@ -527,12 +527,12 @@ public class MainActivity extends Activity {
 											if(w > 0 && h > 0){
 												ratioItems[i] = "" + w + ":" + h;
 											} else {
-												ratioItems[i] = "Full";
+												ratioItems[i] = R.string.full;
 											}
 										}
 										
 										AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(mActivity);
-										alertDialogBuilder.setTitle("Screen Ratio");
+										alertDialogBuilder.setTitle(R.string.screen_ratio);
 										alertDialogBuilder.setItems(ratioItems, new DialogInterface.OnClickListener(){
 											public void onClick(DialogInterface dialog, int which)
 											{
@@ -541,12 +541,12 @@ public class MainActivity extends Activity {
 												if(Locals.VideoXRatio > 0 && Locals.VideoYRatio > 0){
 													mScreenRatioText.setText("" + Locals.VideoXRatio + ":" + Locals.VideoYRatio);
 												} else {
-													mScreenRatioText.setText("Full");
+													mScreenRatioText.setText(R.string.full);
 												}
 												Settings.SaveLocals(mActivity);
 											}
 										});
-										alertDialogBuilder.setNegativeButton("Cancel", null);
+										alertDialogBuilder.setNegativeButton(R.string.cancel, null);
 										alertDialogBuilder.setCancelable(true);
 										AlertDialog alertDialog = alertDialogBuilder.create();
 										alertDialog.show();
@@ -565,26 +565,26 @@ public class MainActivity extends Activity {
 							{
 								TextView txt1 = new TextView(mActivity);
 								txt1.setTextSize(18.0f);
-								txt1.setText("Screen Orientation");
+								txt1.setText(R.string.screen_orientation);
 								txtLayout.addView(txt1, new LinearLayout.LayoutParams( LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
 								
 								mScreenOrientationText = new TextView(mActivity);
 								mScreenOrientationText.setPadding(5, 0, 0, 0);
 								switch(Locals.ScreenOrientation){
 									case ActivityInfo.SCREEN_ORIENTATION_PORTRAIT:
-										mScreenOrientationText.setText("Portrait");
+										mScreenOrientationText.setText(R.string.portrait);
 										break;
 									case ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE:
-										mScreenOrientationText.setText("Landscape");
+										mScreenOrientationText.setText(R.string.landscape);
 										break;
 									case ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT:
-										mScreenOrientationText.setText("Reverse Portrait");
+										mScreenOrientationText.setText(R.string.r_portrait);
 										break;
 									case ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE:
-										mScreenOrientationText.setText("Reverse Landscape");
+										mScreenOrientationText.setText(R.string.r_landscape);
 										break;
 									default:
-										mScreenOrientationText.setText("Unknown");
+										mScreenOrientationText.setText(R.string.unknown);
 										break;
 								}
 								txtLayout.addView(mScreenOrientationText, new LinearLayout.LayoutParams( LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
@@ -592,43 +592,43 @@ public class MainActivity extends Activity {
 							screenOrientationLayout.addView(txtLayout, new LinearLayout.LayoutParams( LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1));
 							
 							Button btn = new Button(mActivity);
-							btn.setText("Change");
+							btn.setText(R.string.change);
 							btn.setOnClickListener(new OnClickListener(){
 								public void onClick(View v){
 									String[] screenOrientationItems;
 									if(android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.GINGERBREAD){
-										screenOrientationItems = new String[]{"Portrait", "Landscape", "Reverse Portrait", "Reverse Landscape"};
+										screenOrientationItems = new String[]{R.string.portrait, R.string.landscape, R.string.r_portrait, R.string.r_landscape};
 									} else {
-										screenOrientationItems = new String[]{"Portrait", "Landscape"};
+										screenOrientationItems = new String[]{R.string.portrait, R.string.landscape};
 									}
 									
 									AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(mActivity);
-									alertDialogBuilder.setTitle("Screen Orientation");
+									alertDialogBuilder.setTitle(R.string.screen_orientation);
 									alertDialogBuilder.setItems(screenOrientationItems, new DialogInterface.OnClickListener(){
 										public void onClick(DialogInterface dialog, int which)
 										{
 											switch(which){
 												case 0:
 													Locals.ScreenOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
-													mScreenOrientationText.setText("Portrait");
+													mScreenOrientationText.setText(R.string.portrait);
 													break;
 												case 1:
 													Locals.ScreenOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
-													mScreenOrientationText.setText("Landscape");
+													mScreenOrientationText.setText(R.string.landscape);
 													break;
 												case 2:
 													Locals.ScreenOrientation = ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT;
-													mScreenOrientationText.setText("Reverse Portrait");
+													mScreenOrientationText.setText(R.string.r_portrait);
 													break;
 												case 3:
 													Locals.ScreenOrientation = ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE;
-													mScreenOrientationText.setText("Reverse Landscape");
+													mScreenOrientationText.setText(R.string.r_landscape);
 													break;
 											}
 											Settings.SaveLocals(mActivity);
 										}
 									});
-									alertDialogBuilder.setNegativeButton("Cancel", null);
+									alertDialogBuilder.setNegativeButton(R.string.cancel, null);
 									alertDialogBuilder.setCancelable(true);
 									AlertDialog alertDialog = alertDialogBuilder.create();
 									alertDialog.show();
@@ -657,12 +657,12 @@ public class MainActivity extends Activity {
 							{
 								TextView txt1 = new TextView(mActivity);
 								txt1.setTextSize(18.0f);
-								txt1.setText("Smooth Video");
+								txt1.setText(R.string.smooth_video);
 								txtLayout.addView(txt1, new LinearLayout.LayoutParams( LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
 								
 								TextView txt2 = new TextView(mActivity);
 								txt2.setPadding(5, 0, 0, 0);
-								txt2.setText("Linear Filtering");
+								txt2.setText(R.string.linear_filtering);
 								txtLayout.addView(txt2, new LinearLayout.LayoutParams( LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
 							}
 							videoSmoothLayout.addView(txtLayout, new LinearLayout.LayoutParams( LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1));
@@ -775,7 +775,7 @@ public class MainActivity extends Activity {
 										AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(mActivity);
 										alertDialogBuilder.setTitle(Globals.ENVIRONMENT_ITEMS[index][1]);
 										alertDialogBuilder.setView(ed);
-										alertDialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
+										alertDialogBuilder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener(){
 											public void onClick(DialogInterface dialog, int whichButton) {
 												String newval = ed.getText().toString();
 												Locals.EnvironmentMap.put(Globals.ENVIRONMENT_ITEMS[index][1], newval);
@@ -783,7 +783,7 @@ public class MainActivity extends Activity {
 												Settings.SaveLocals(mActivity);
 											}
 										});
-										alertDialogBuilder.setNegativeButton("Cancel", null);
+										alertDialogBuilder.setNegativeButton(R.string.cancel, null);
 										alertDialogBuilder.setCancelable(true);
 										AlertDialog alertDialog = alertDialogBuilder.create();
 										alertDialog.show();
@@ -824,12 +824,12 @@ public class MainActivity extends Activity {
 					{
 						TextView txt1 = new TextView(mActivity);
 						txt1.setTextSize(16.0f);
-						txt1.setText("Don't ask me again");
+						txt1.setText(R.string.dont_ask_again);
 						txtLayout.addView(txt1, new LinearLayout.LayoutParams( LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
 						
 						TextView txt2 = new TextView(mActivity);
 						txt2.setPadding(5, 0, 0, 0);
-						txt2.setText("Not use AppLaunchConfig");
+						txt2.setText(R.string.no_applaunchconfig);
 						txtLayout.addView(txt2, new LinearLayout.LayoutParams( LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
 					}
 					askLayout.addView(txtLayout, new LinearLayout.LayoutParams( LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1));
@@ -837,7 +837,7 @@ public class MainActivity extends Activity {
 				runLayout.addView(askLayout, new LinearLayout.LayoutParams( LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1));
 				
 				mRunButton = new Button(mActivity);
-				mRunButton.setText(" Run ");
+				mRunButton.setText(" " + R.string.run + " ");
 				mRunButton.setTextSize(24.0f);
 				mRunButton.setOnClickListener(new OnClickListener(){
 					public void onClick(View v){
@@ -893,9 +893,9 @@ public class MainActivity extends Activity {
 		
 		if(!missingFileNames.equals("")){
 			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-			alertDialogBuilder.setTitle("Error");
-			alertDialogBuilder.setMessage("Following " + missingCount + " files are missing.\n" + missingFileNames);
-			alertDialogBuilder.setPositiveButton("Quit", new DialogInterface.OnClickListener(){
+			alertDialogBuilder.setTitle(R.string.error);
+			alertDialogBuilder.setMessage(R.string.following + " " + missingCount + " " + R.string.missing_file + "\n" + missingFileNames);
+			alertDialogBuilder.setPositiveButton(R.string.quit, new DialogInterface.OnClickListener(){
 				public void onClick(DialogInterface dialog, int whichButton) {
 					finish();
 				}
