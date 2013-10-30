@@ -29,7 +29,7 @@
 		<string name="smooth_video">平滑圖像</string>
 		<string name="linear_filtering">線性過濾</string>
 		<string name="dont_ask_again">不要再顯示</string>
-		<string name="no_applaunchconfig">不使用此設置畫面</string>
+		<string name="no_applaunchconfig">不使用此設定畫面</string>
 		<string name="run">執行</string>
 		<string name="following">以下</string>
 		<string name="missing_file">個檔案缺失。</string>
