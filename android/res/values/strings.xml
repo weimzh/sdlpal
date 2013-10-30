@@ -28,7 +28,7 @@
 		<string name="unknown">Unknown</string>
 		<string name="smooth_video">Smooth Video</string>
 		<string name="linear_filtering">Linear Filtering</string>
-		<string name="dont_ask_again">Don't ask me again</string>
+		<string name="dont_ask_again">Don\'t ask me again</string>
 		<string name="no_applaunchconfig">Do not use AppLaunchConfig</string>
 		<string name="run">Run</string>
 		<string name="following">Following</string>
@@ -63,7 +63,7 @@
 		<string name="app_launch_config">App Launch Config...</string>
 		<string name="touch_mode_invalid">None</string>
 		<string name="touch_mode_touch">Touch</string>
-		<string name="touch_mode_trackpad">Trackpad</string>
+		<string name="touch_mode_trackpad">TrackPad</string>
 		<string name="touch_mode_gamepad">GamePad</string>
 		<string name="close_appli">Close application?</string>
 	</resources>

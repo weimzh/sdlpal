@@ -334,7 +334,7 @@ public class MainView extends AbsoluteLayout
 		}
 		
 		//if(Globals.SUBMENU_KEY_NUM > 0){
-			SubMenu menu_userfunc = menu.addSubMenu(R.string.function);
+			SubMenu menu_userfunc = menu.addSubMenu(getResources().getString(R.string.function));
 			for(int i = 0; i < Globals.SUBMENU_KEY_NUM; i ++){
 				Integer sdlKey = (Integer)Globals.SDLKeyAdditionalKeyMap.get(new Integer(Globals.SUBMENU_KEY_ARRAY[i]));
 				if(sdlKey != null && sdlKey.intValue() != SDL_1_2_Keycodes.SDLK_UNKNOWN){
@@ -346,65 +346,65 @@ public class MainView extends AbsoluteLayout
 			}
 		//}
 		
-		SubMenu menu_touchmode = menu.addSubMenu(R.string.touch_mode);
-		menu_touchmode.add(Menu.NONE, MENU_ITEM_ID_TOUCHMODE_INVALID, Menu.NONE, "Invalid");
+		SubMenu menu_touchmode = menu.addSubMenu(getResources().getString(R.string.touch_mode));
+		menu_touchmode.add(Menu.NONE, MENU_ITEM_ID_TOUCHMODE_INVALID, Menu.NONE, getResources().getString(R.string.touch_mode_invalid));
 		if(Globals.MOUSE_USE){
-			menu_touchmode.add(Menu.NONE, MENU_ITEM_ID_TOUCHMODE_TOUCH, Menu.NONE, "Touch");
-			menu_touchmode.add(Menu.NONE, MENU_ITEM_ID_TOUCHMODE_TRACKPAD, Menu.NONE, "Track Pad");
+			menu_touchmode.add(Menu.NONE, MENU_ITEM_ID_TOUCHMODE_TOUCH, Menu.NONE, getResources().getString(R.string.touch_mode_touch));
+			menu_touchmode.add(Menu.NONE, MENU_ITEM_ID_TOUCHMODE_TRACKPAD, Menu.NONE, getResources().getString(R.string.touch_mode_trackpad));
 		}
-		menu_touchmode.add(Menu.NONE, MENU_ITEM_ID_TOUCHMODE_GAMEPAD, Menu.NONE, "Game Pad");
+		menu_touchmode.add(Menu.NONE, MENU_ITEM_ID_TOUCHMODE_GAMEPAD, Menu.NONE, getResources().getString(R.string.touch_mode_gamepad));
 
-		menu.add(Menu.NONE, (MENU_ITEM_ID_QUIT), Menu.NONE, R.string.quit);
+		menu.add(Menu.NONE, (MENU_ITEM_ID_QUIT), Menu.NONE, getResources().getString(R.string.quit));
 		
 		//
 		
 		//menu.add(Menu.NONE, (MENU_ITEM_ID_ABOUT), Menu.NONE, "About");
 
-		menu.add(Menu.NONE, MENU_ITEM_ID_SETTING_KEYCONFIG, Menu.NONE, R.string.key_config);
+		menu.add(Menu.NONE, MENU_ITEM_ID_SETTING_KEYCONFIG, Menu.NONE, getResources().getString(R.string.key_config));
 		
-		SubMenu menu_mousecursor = menu.addSubMenu(R.string.mouse_cursor);
-		menu_mousecursor.add(Menu.NONE, MENU_ITEM_ID_SETTING_MOUSECURSOR_SHOW, Menu.NONE, R.string.show);
-		menu_mousecursor.add(Menu.NONE, MENU_ITEM_ID_SETTING_MOUSECURSOR_HIDE, Menu.NONE, R.string.hide);
+		SubMenu menu_mousecursor = menu.addSubMenu(getResources().getString(R.string.mouse_cursor));
+		menu_mousecursor.add(Menu.NONE, MENU_ITEM_ID_SETTING_MOUSECURSOR_SHOW, Menu.NONE, getResources().getString(R.string.show));
+		menu_mousecursor.add(Menu.NONE, MENU_ITEM_ID_SETTING_MOUSECURSOR_HIDE, Menu.NONE, getResources().getString(R.string.hide));
 		
 		if(Globals.BUTTON_USE){
-			SubMenu menu_btn_left = menu.addSubMenu(R.string.button_left);
+			SubMenu menu_btn_left = menu.addSubMenu(getResources().getString(R.string.button_left));
 			if(Globals.ButtonLeftEnabled){
-				menu_btn_left.add(Menu.NONE, MENU_ITEM_ID_SETTING_BUTTON_LEFT_ENABLED_DISABLE, Menu.NONE, R.string.disable);
+				menu_btn_left.add(Menu.NONE, MENU_ITEM_ID_SETTING_BUTTON_LEFT_ENABLED_DISABLE, Menu.NONE, getResources().getString(R.string.disable));
 				for(int i = 1; i <= Globals.BUTTON_LEFT_MAX; i ++){
 					menu_btn_left.add(Menu.NONE, (MENU_ITEM_ID_SETTING_BUTTON_LEFT_NUM_FIRST + i), Menu.NONE, "" + i + "unit");
 				}
 			} else {
-				menu_btn_left.add(Menu.NONE, MENU_ITEM_ID_SETTING_BUTTON_LEFT_ENABLED_ENABLE, Menu.NONE, R.string.enable);
+				menu_btn_left.add(Menu.NONE, MENU_ITEM_ID_SETTING_BUTTON_LEFT_ENABLED_ENABLE, Menu.NONE, getResources().getString(R.string.enable));
 			}
 			
-			SubMenu menu_btn_right = menu.addSubMenu(R.string.button_right);
+			SubMenu menu_btn_right = menu.addSubMenu(getResources().getString(R.string.button_right));
 			if(Globals.ButtonRightEnabled){
-				menu_btn_right.add(Menu.NONE, MENU_ITEM_ID_SETTING_BUTTON_RIGHT_ENABLED_DISABLE, Menu.NONE, R.string.disable);
+				menu_btn_right.add(Menu.NONE, MENU_ITEM_ID_SETTING_BUTTON_RIGHT_ENABLED_DISABLE, Menu.NONE, getResources().getString(R.string.disable));
 				for(int i = 1; i <= Globals.BUTTON_RIGHT_MAX; i ++){
 					menu_btn_right.add(Menu.NONE, (MENU_ITEM_ID_SETTING_BUTTON_RIGHT_NUM_FIRST + i), Menu.NONE, "" + i + " unit");
 				}
 			} else {
-				menu_btn_right.add(Menu.NONE, MENU_ITEM_ID_SETTING_BUTTON_RIGHT_ENABLED_ENABLE, Menu.NONE, R.string.enable);
+				menu_btn_right.add(Menu.NONE, MENU_ITEM_ID_SETTING_BUTTON_RIGHT_ENABLED_ENABLE, Menu.NONE, getResources().getString(R.string.enable));
 			}
 			
-			SubMenu menu_btn_top = menu.addSubMenu(R.string.button_top);
+			SubMenu menu_btn_top = menu.addSubMenu(getResources().getString(R.string.button_top));
 			if(Globals.ButtonTopEnabled){
-				menu_btn_top.add(Menu.NONE, MENU_ITEM_ID_SETTING_BUTTON_TOP_ENABLED_DISABLE, Menu.NONE, R.string.disable);
+				menu_btn_top.add(Menu.NONE, MENU_ITEM_ID_SETTING_BUTTON_TOP_ENABLED_DISABLE, Menu.NONE, getResources().getString(R.string.disable));
 				for(int i = 1; i <= Globals.BUTTON_TOP_MAX; i ++){
 					menu_btn_top.add(Menu.NONE, (MENU_ITEM_ID_SETTING_BUTTON_TOP_NUM_FIRST + i), Menu.NONE, "" + i + "unit");
 				}
 			} else {
-				menu_btn_top.add(Menu.NONE, MENU_ITEM_ID_SETTING_BUTTON_TOP_ENABLED_ENABLE, Menu.NONE, R.string.enable);
+				menu_btn_top.add(Menu.NONE, MENU_ITEM_ID_SETTING_BUTTON_TOP_ENABLED_ENABLE, Menu.NONE, getResources().getString(R.string.enable));
 			}
 			
-			SubMenu menu_btn_bottom = menu.addSubMenu(R.string.button_bottom);
+			SubMenu menu_btn_bottom = menu.addSubMenu(getResources().getString(R.string.button_bottom));
 			if(Globals.ButtonBottomEnabled){
-				menu_btn_bottom.add(Menu.NONE, MENU_ITEM_ID_SETTING_BUTTON_BOTTOM_ENABLED_DISABLE, Menu.NONE, R.string.disable);
+				menu_btn_bottom.add(Menu.NONE, MENU_ITEM_ID_SETTING_BUTTON_BOTTOM_ENABLED_DISABLE, Menu.NONE, getResources().getString(R.string.disable));
 				for(int i = 1; i <= Globals.BUTTON_BOTTOM_MAX; i ++){
 					menu_btn_bottom.add(Menu.NONE, (MENU_ITEM_ID_SETTING_BUTTON_BOTTOM_NUM_FIRST + i), Menu.NONE, "" + i + "unit");
 				}
 			} else {
-				menu_btn_bottom.add(Menu.NONE, MENU_ITEM_ID_SETTING_BUTTON_BOTTOM_ENABLED_ENABLE, Menu.NONE, R.string.enable);
+				menu_btn_bottom.add(Menu.NONE, MENU_ITEM_ID_SETTING_BUTTON_BOTTOM_ENABLED_ENABLE, Menu.NONE, getResources().getString(R.string.enable));
 			}
 			
 			SubMenu menu_video_xmargin = menu.addSubMenu(R.string.video_x_margin);
@@ -412,48 +412,48 @@ public class MainView extends AbsoluteLayout
 				menu_video_xmargin.add(Menu.NONE, (MENU_ITEM_ID_SETTING_VIDEO_XMARGIN_FIRST + i), Menu.NONE, "" + i);
 			}
 			
-			SubMenu menu_video_ymargin = menu.addSubMenu(R.string.video_y_margin);
+			SubMenu menu_video_ymargin = menu.addSubMenu(getResources().getString(R.string.video_y_margin));
 			for(int i = 0; i <= (MENU_ITEM_ID_SETTING_VIDEO_YMARGIN_LAST - MENU_ITEM_ID_SETTING_VIDEO_YMARGIN_FIRST); i ++){
 				menu_video_ymargin.add(Menu.NONE, (MENU_ITEM_ID_SETTING_VIDEO_YMARGIN_FIRST + i), Menu.NONE, "" + i);
 			}
 		}
 		
-		SubMenu menu_video_xpos = menu.addSubMenu(R.string.video_x_pos);
-		menu_video_xpos.add(Menu.NONE, MENU_ITEM_ID_SETTING_VIDEO_XPOSITION_LEFT, Menu.NONE, R.string.left);
-		menu_video_xpos.add(Menu.NONE, MENU_ITEM_ID_SETTING_VIDEO_XPOSITION_CENTER, Menu.NONE, R.string.center);
-		menu_video_xpos.add(Menu.NONE, MENU_ITEM_ID_SETTING_VIDEO_XPOSITION_RIGHT, Menu.NONE, R.string.right);
+		SubMenu menu_video_xpos = menu.addSubMenu(getResources().getString(R.string.video_x_pos));
+		menu_video_xpos.add(Menu.NONE, MENU_ITEM_ID_SETTING_VIDEO_XPOSITION_LEFT, Menu.NONE, getResources().getString(R.string.left));
+		menu_video_xpos.add(Menu.NONE, MENU_ITEM_ID_SETTING_VIDEO_XPOSITION_CENTER, Menu.NONE, getResources().getString(R.string.center));
+		menu_video_xpos.add(Menu.NONE, MENU_ITEM_ID_SETTING_VIDEO_XPOSITION_RIGHT, Menu.NONE, getResources().getString(R.string.right));
 		
-		SubMenu menu_video_ypos = menu.addSubMenu(R.string.video_y_pos);
-		menu_video_ypos.add(Menu.NONE, MENU_ITEM_ID_SETTING_VIDEO_YPOSITION_TOP, Menu.NONE, R.string.top);
-		menu_video_ypos.add(Menu.NONE, MENU_ITEM_ID_SETTING_VIDEO_YPOSITION_CENTER, Menu.NONE, R.string.center);
-		menu_video_ypos.add(Menu.NONE, MENU_ITEM_ID_SETTING_VIDEO_YPOSITION_BOTTOM, Menu.NONE, R.string.bottom);
+		SubMenu menu_video_ypos = menu.addSubMenu(getResources().getString(R.string.video_y_pos));
+		menu_video_ypos.add(Menu.NONE, MENU_ITEM_ID_SETTING_VIDEO_YPOSITION_TOP, Menu.NONE, getResources().getString(R.string.top));
+		menu_video_ypos.add(Menu.NONE, MENU_ITEM_ID_SETTING_VIDEO_YPOSITION_CENTER, Menu.NONE, getResources().getString(R.string.center));
+		menu_video_ypos.add(Menu.NONE, MENU_ITEM_ID_SETTING_VIDEO_YPOSITION_BOTTOM, Menu.NONE, getResources().getString(R.string.bottom));
 		
-		SubMenu menu_gamepad_position = menu.addSubMenu(R.string.gamepad_pos);
-		menu_gamepad_position.add(Menu.NONE, MENU_ITEM_ID_SETTING_GAMEPAD_POSITION_FIRST, Menu.NONE, "0 (" + R.string.top + ")");
+		SubMenu menu_gamepad_position = menu.addSubMenu(getResources().getString(R.string.gamepad_pos));
+		menu_gamepad_position.add(Menu.NONE, MENU_ITEM_ID_SETTING_GAMEPAD_POSITION_FIRST, Menu.NONE, "0 (" + getResources().getString(R.string.top) + ")");
 		for(int i = 1; i < (MENU_ITEM_ID_SETTING_GAMEPAD_POSITION_LAST - MENU_ITEM_ID_SETTING_GAMEPAD_POSITION_FIRST); i ++){
 			menu_gamepad_position.add(Menu.NONE, (MENU_ITEM_ID_SETTING_GAMEPAD_POSITION_FIRST + i), Menu.NONE, "" + (i * 10));
 		}
-		menu_gamepad_position.add(Menu.NONE, MENU_ITEM_ID_SETTING_GAMEPAD_POSITION_LAST, Menu.NONE, "100 (" + R.string.bottom + ")");
+		menu_gamepad_position.add(Menu.NONE, MENU_ITEM_ID_SETTING_GAMEPAD_POSITION_LAST, Menu.NONE, "100 (" + getResources().getString(R.string.bottom) + ")");
 		
-		SubMenu menu_gamepad_size = menu.addSubMenu(R.string.gamepad_size);
+		SubMenu menu_gamepad_size = menu.addSubMenu(getResources().getString(R.string.gamepad_size));
 		for(int i = 1; i <= (MENU_ITEM_ID_SETTING_GAMEPAD_SIZE_LAST - MENU_ITEM_ID_SETTING_GAMEPAD_SIZE_FIRST); i ++){
 			menu_gamepad_size.add(Menu.NONE, (MENU_ITEM_ID_SETTING_GAMEPAD_SIZE_FIRST + i), Menu.NONE, "" + (i * 10) + "%");
 		}
 		
-		SubMenu menu_gamepad_opacity = menu.addSubMenu(R.string.gamepad_opacity);
+		SubMenu menu_gamepad_opacity = menu.addSubMenu(getResources().getString(R.string.gamepad_opacity));
 		for(int i = 0; i <= (MENU_ITEM_ID_SETTING_GAMEPAD_OPACITY_LAST - MENU_ITEM_ID_SETTING_GAMEPAD_OPACITY_FIRST); i ++){
 			menu_gamepad_opacity.add(Menu.NONE, (MENU_ITEM_ID_SETTING_GAMEPAD_OPACITY_FIRST + i), Menu.NONE, "" + (i * 10) + "%");
 		}
 		
-		SubMenu menu_gamepad_arrow_button = menu.addSubMenu(R.string.gamepad_arrow_button);
-		menu_gamepad_arrow_button.add(Menu.NONE, MENU_ITEM_ID_SETTING_GAMEPAD_ARROW_BUTTON_AS_AXIS, Menu.NONE, R.string.as_axis);
-		menu_gamepad_arrow_button.add(Menu.NONE, MENU_ITEM_ID_SETTING_GAMEPAD_ARROW_BUTTON_AS_AXIS, Menu.NONE, R.string.as_button);
+		SubMenu menu_gamepad_arrow_button = menu.addSubMenu(getResources().getString(R.string.gamepad_arrow_button));
+		menu_gamepad_arrow_button.add(Menu.NONE, MENU_ITEM_ID_SETTING_GAMEPAD_ARROW_BUTTON_AS_AXIS, Menu.NONE, getResources().getString(R.string.as_axis));
+		menu_gamepad_arrow_button.add(Menu.NONE, MENU_ITEM_ID_SETTING_GAMEPAD_ARROW_BUTTON_AS_AXIS, Menu.NONE, getResources().getString(R.string.as_button));
 
-		SubMenu menu_appconfig = menu.addSubMenu(R.string.app_launch_config);
+		SubMenu menu_appconfig = menu.addSubMenu(getResources().getString(R.string.app_launch_config));
 		if(Locals.AppLaunchConfigUse){
-			menu_appconfig.add(Menu.NONE, MENU_ITEM_ID_SETTING_APPCONFIG_NOTUSE, Menu.NONE, R.string.disable);
+			menu_appconfig.add(Menu.NONE, MENU_ITEM_ID_SETTING_APPCONFIG_NOTUSE, Menu.NONE, getResources().getString(R.string.disable));
 		} else {
-			menu_appconfig.add(Menu.NONE, MENU_ITEM_ID_SETTING_APPCONFIG_USE, Menu.NONE, R.string.enable);
+			menu_appconfig.add(Menu.NONE, MENU_ITEM_ID_SETTING_APPCONFIG_USE, Menu.NONE, getResources().getString(R.string.enable));
 		}
 		
 		return true;
@@ -635,13 +635,13 @@ public class MainView extends AbsoluteLayout
 			//
 		} else if(d == MENU_ITEM_ID_QUIT){
 			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
-			alertDialogBuilder.setTitle(R.string.close_appli);
-			alertDialogBuilder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener(){
+			alertDialogBuilder.setTitle(getResources().getString(R.string.close_appli));
+			alertDialogBuilder.setPositiveButton(getResources().getString(R.string.yes), new DialogInterface.OnClickListener(){
 				public void onClick(DialogInterface dialog, int whichButton) {
 					exitApp();
 				}
 			});
-			alertDialogBuilder.setNegativeButton(R.string.no, null);
+			alertDialogBuilder.setNegativeButton(getResources().getString(R.string.no), null);
 			alertDialogBuilder.setCancelable(true);
 			AlertDialog alertDialog = alertDialogBuilder.create();
 			alertDialog.show();
