@@ -40,43 +40,21 @@
 		7104FDB40D772FBC00A97E53 /* player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7104FDA50D772FBC00A97E53 /* player.cpp */; };
 		7104FDB60D772FBC00A97E53 /* rix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7104FDA70D772FBC00A97E53 /* rix.cpp */; };
 		71147E4014085E31003FB2DB /* surroundopl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71147E3E14085E31003FB2DB /* surroundopl.cpp */; };
-		71147E4114085E31003FB2DB /* surroundopl.h in Copy Frameworks into .app bundle */ = {isa = PBXBuildFile; fileRef = 71147E3F14085E31003FB2DB /* surroundopl.h */; };
-		7138FD0E1424E4810060DE76 /* demuopl.h in Copy Frameworks into .app bundle */ = {isa = PBXBuildFile; fileRef = 7138FD0B1424E4810060DE76 /* demuopl.h */; };
 		7138FD0F1424E4810060DE76 /* dosbox_opl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7138FD0C1424E4810060DE76 /* dosbox_opl.cpp */; };
-		7138FD101424E4810060DE76 /* dosbox_opl.h in Copy Frameworks into .app bundle */ = {isa = PBXBuildFile; fileRef = 7138FD0D1424E4810060DE76 /* dosbox_opl.h */; };
 		716EB9BC0D77318900D5DE1F /* game.c in Sources */ = {isa = PBXBuildFile; fileRef = 7104FD3F0D772F6300A97E53 /* game.c */; };
 		716EB9C70D77340300D5DE1F /* sdlpal.icns in Resources */ = {isa = PBXBuildFile; fileRef = 716EB9C60D77340300D5DE1F /* sdlpal.icns */; };
 		716EB9CA0D77347B00D5DE1F /* ui.c in Sources */ = {isa = PBXBuildFile; fileRef = 7104FD5E0D772F6300A97E53 /* ui.c */; };
 		71E23E9113F6D1AD001287B6 /* bit.c in Sources */ = {isa = PBXBuildFile; fileRef = 71E23E7113F6D1AD001287B6 /* bit.c */; };
-		71E23E9213F6D1AD001287B6 /* bit.h in Copy Frameworks into .app bundle */ = {isa = PBXBuildFile; fileRef = 71E23E7213F6D1AD001287B6 /* bit.h */; };
-		71E23E9313F6D1AD001287B6 /* D.dat in Resources */ = {isa = PBXBuildFile; fileRef = 71E23E7313F6D1AD001287B6 /* D.dat */; };
 		71E23E9413F6D1AD001287B6 /* decoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 71E23E7413F6D1AD001287B6 /* decoder.c */; };
-		71E23E9513F6D1AD001287B6 /* decoder.h in Copy Frameworks into .app bundle */ = {isa = PBXBuildFile; fileRef = 71E23E7513F6D1AD001287B6 /* decoder.h */; };
 		71E23E9613F6D1AD001287B6 /* fixed.c in Sources */ = {isa = PBXBuildFile; fileRef = 71E23E7613F6D1AD001287B6 /* fixed.c */; };
-		71E23E9713F6D1AD001287B6 /* fixed.h in Copy Frameworks into .app bundle */ = {isa = PBXBuildFile; fileRef = 71E23E7713F6D1AD001287B6 /* fixed.h */; };
 		71E23E9813F6D1AD001287B6 /* frame.c in Sources */ = {isa = PBXBuildFile; fileRef = 71E23E7813F6D1AD001287B6 /* frame.c */; };
-		71E23E9913F6D1AD001287B6 /* frame.h in Copy Frameworks into .app bundle */ = {isa = PBXBuildFile; fileRef = 71E23E7913F6D1AD001287B6 /* frame.h */; };
 		71E23E9A13F6D1AD001287B6 /* huffman.c in Sources */ = {isa = PBXBuildFile; fileRef = 71E23E7A13F6D1AD001287B6 /* huffman.c */; };
-		71E23E9B13F6D1AD001287B6 /* huffman.h in Copy Frameworks into .app bundle */ = {isa = PBXBuildFile; fileRef = 71E23E7B13F6D1AD001287B6 /* huffman.h */; };
-		71E23E9C13F6D1AD001287B6 /* imdct_s.dat in Resources */ = {isa = PBXBuildFile; fileRef = 71E23E7C13F6D1AD001287B6 /* imdct_s.dat */; };
 		71E23E9D13F6D1AD001287B6 /* layer3.c in Sources */ = {isa = PBXBuildFile; fileRef = 71E23E7D13F6D1AD001287B6 /* layer3.c */; };
-		71E23E9E13F6D1AD001287B6 /* layer3.h in Copy Frameworks into .app bundle */ = {isa = PBXBuildFile; fileRef = 71E23E7E13F6D1AD001287B6 /* layer3.h */; };
 		71E23E9F13F6D1AD001287B6 /* layer12.c in Sources */ = {isa = PBXBuildFile; fileRef = 71E23E7F13F6D1AD001287B6 /* layer12.c */; };
-		71E23EA013F6D1AD001287B6 /* layer12.h in Copy Frameworks into .app bundle */ = {isa = PBXBuildFile; fileRef = 71E23E8013F6D1AD001287B6 /* layer12.h */; };
-		71E23EA113F6D1AD001287B6 /* libmad_config.h in Copy Frameworks into .app bundle */ = {isa = PBXBuildFile; fileRef = 71E23E8113F6D1AD001287B6 /* libmad_config.h */; };
-		71E23EA213F6D1AD001287B6 /* libmad_global.h in Copy Frameworks into .app bundle */ = {isa = PBXBuildFile; fileRef = 71E23E8213F6D1AD001287B6 /* libmad_global.h */; };
-		71E23EA313F6D1AD001287B6 /* mad.h in Copy Frameworks into .app bundle */ = {isa = PBXBuildFile; fileRef = 71E23E8313F6D1AD001287B6 /* mad.h */; };
 		71E23EA413F6D1AD001287B6 /* music_mad.c in Sources */ = {isa = PBXBuildFile; fileRef = 71E23E8413F6D1AD001287B6 /* music_mad.c */; };
-		71E23EA513F6D1AD001287B6 /* music_mad.h in Copy Frameworks into .app bundle */ = {isa = PBXBuildFile; fileRef = 71E23E8513F6D1AD001287B6 /* music_mad.h */; };
-		71E23EA613F6D1AD001287B6 /* qc_table.dat in Resources */ = {isa = PBXBuildFile; fileRef = 71E23E8613F6D1AD001287B6 /* qc_table.dat */; };
-		71E23EA713F6D1AD001287B6 /* rq_table.dat in Resources */ = {isa = PBXBuildFile; fileRef = 71E23E8713F6D1AD001287B6 /* rq_table.dat */; };
-		71E23EA813F6D1AD001287B6 /* sf_table.dat in Resources */ = {isa = PBXBuildFile; fileRef = 71E23E8813F6D1AD001287B6 /* sf_table.dat */; };
 		71E23EA913F6D1AD001287B6 /* stream.c in Sources */ = {isa = PBXBuildFile; fileRef = 71E23E8913F6D1AD001287B6 /* stream.c */; };
-		71E23EAA13F6D1AD001287B6 /* stream.h in Copy Frameworks into .app bundle */ = {isa = PBXBuildFile; fileRef = 71E23E8A13F6D1AD001287B6 /* stream.h */; };
 		71E23EAB13F6D1AD001287B6 /* synth.c in Sources */ = {isa = PBXBuildFile; fileRef = 71E23E8B13F6D1AD001287B6 /* synth.c */; };
-		71E23EAC13F6D1AD001287B6 /* synth.h in Copy Frameworks into .app bundle */ = {isa = PBXBuildFile; fileRef = 71E23E8C13F6D1AD001287B6 /* synth.h */; };
 		71E23EAD13F6D1AD001287B6 /* timer.c in Sources */ = {isa = PBXBuildFile; fileRef = 71E23E8D13F6D1AD001287B6 /* timer.c */; };
-		71E23EAE13F6D1AD001287B6 /* timer.h in Copy Frameworks into .app bundle */ = {isa = PBXBuildFile; fileRef = 71E23E8E13F6D1AD001287B6 /* timer.h */; };
 		71E27E050D8C7E2F0048BA16 /* fight.c in Sources */ = {isa = PBXBuildFile; fileRef = 71E27E030D8C7E2F0048BA16 /* fight.c */; };
 		71F0F6D70DAA63B400F88C16 /* ending.c in Sources */ = {isa = PBXBuildFile; fileRef = 71F0F6D10DAA63B400F88C16 /* ending.c */; };
 		71F0F6D90DAA63B500F88C16 /* itemmenu.c in Sources */ = {isa = PBXBuildFile; fileRef = 71F0F6D30DAA63B400F88C16 /* itemmenu.c */; };
@@ -93,23 +71,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				002F3A0009D0884600EBEB88 /* SDL.framework in Copy Frameworks into .app bundle */,
-				71E23E9213F6D1AD001287B6 /* bit.h in Copy Frameworks into .app bundle */,
-				71E23E9513F6D1AD001287B6 /* decoder.h in Copy Frameworks into .app bundle */,
-				71E23E9713F6D1AD001287B6 /* fixed.h in Copy Frameworks into .app bundle */,
-				71E23E9913F6D1AD001287B6 /* frame.h in Copy Frameworks into .app bundle */,
-				71E23E9B13F6D1AD001287B6 /* huffman.h in Copy Frameworks into .app bundle */,
-				71E23E9E13F6D1AD001287B6 /* layer3.h in Copy Frameworks into .app bundle */,
-				71E23EA013F6D1AD001287B6 /* layer12.h in Copy Frameworks into .app bundle */,
-				71E23EA113F6D1AD001287B6 /* libmad_config.h in Copy Frameworks into .app bundle */,
-				71E23EA213F6D1AD001287B6 /* libmad_global.h in Copy Frameworks into .app bundle */,
-				71E23EA313F6D1AD001287B6 /* mad.h in Copy Frameworks into .app bundle */,
-				71E23EA513F6D1AD001287B6 /* music_mad.h in Copy Frameworks into .app bundle */,
-				71E23EAA13F6D1AD001287B6 /* stream.h in Copy Frameworks into .app bundle */,
-				71E23EAC13F6D1AD001287B6 /* synth.h in Copy Frameworks into .app bundle */,
-				71E23EAE13F6D1AD001287B6 /* timer.h in Copy Frameworks into .app bundle */,
-				71147E4114085E31003FB2DB /* surroundopl.h in Copy Frameworks into .app bundle */,
-				7138FD0E1424E4810060DE76 /* demuopl.h in Copy Frameworks into .app bundle */,
-				7138FD101424E4810060DE76 /* dosbox_opl.h in Copy Frameworks into .app bundle */,
 			);
 			name = "Copy Frameworks into .app bundle";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,11 +452,6 @@
 			files = (
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				716EB9C70D77340300D5DE1F /* sdlpal.icns in Resources */,
-				71E23E9313F6D1AD001287B6 /* D.dat in Resources */,
-				71E23E9C13F6D1AD001287B6 /* imdct_s.dat in Resources */,
-				71E23EA613F6D1AD001287B6 /* qc_table.dat in Resources */,
-				71E23EA713F6D1AD001287B6 /* rq_table.dat in Resources */,
-				71E23EA813F6D1AD001287B6 /* sf_table.dat in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,10 +547,6 @@
 		C01FCF4C08A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				INFOPLIST_FILE = Info.plist;
@@ -607,10 +559,6 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					i386,
-					ppc,
-				);
 				DEAD_CODE_STRIPPING = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					/Library/Frameworks,
@@ -623,17 +571,12 @@
 					"$(HEADER_SEARCH_PATHS)",
 				);
 				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
 			name = Debug;
 		};
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					i386,
-					ppc,
-				);
 				DEAD_CODE_STRIPPING = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					/Library/Frameworks,
@@ -646,7 +589,6 @@
 					"$(HEADER_SEARCH_PATHS)",
 				);
 				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
 			name = Release;
 		};
