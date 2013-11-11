@@ -28,7 +28,7 @@
 #include "midi.h"
 #endif
 
-#ifdef PAL_HAS_MP3
+#if PAL_HAS_MP3
 #include "libmad/music_mad.h"
 #endif
 
@@ -56,7 +56,7 @@ typedef struct tagSNDPLAYER
 #ifdef PAL_HAS_CD
    SDL_CD                   *pCD;
 #endif
-#ifdef PAL_HAS_MP3
+#if PAL_HAS_MP3
    mad_data                 *pMP3;
    BOOL                      fMP3Loop;
    INT                       iCurrentMP3;
@@ -211,7 +211,7 @@ SOUND_FillAudio(
    //
    if (!g_fNoMusic)
    {
-#ifdef PAL_HAS_MP3
+#if PAL_HAS_MP3
       SDL_mutexP(gSndPlayer.lock);
 
       if (gSndPlayer.pMP3 != NULL)
@@ -384,7 +384,7 @@ SOUND_OpenAudio(
    }
 #endif
 
-#ifdef PAL_HAS_MP3
+#if PAL_HAS_MP3
    gSndPlayer.iCurrentMP3 = -1;
    gSndPlayer.lock = SDL_CreateMutex();
 #endif
@@ -448,7 +448,7 @@ SOUND_CloseAudio(
       gSndPlayer.mkf = NULL;
    }
 
-#ifdef PAL_HAS_MP3
+#if PAL_HAS_MP3
    SDL_mutexP(gSndPlayer.lock);
 
    if (gSndPlayer.pMP3 != NULL)
@@ -643,7 +643,7 @@ PAL_PlayMUS(
    }
 #endif
 
-#ifdef PAL_HAS_MP3
+#if PAL_HAS_MP3
    SDL_mutexP(gSndPlayer.lock);
 
    if (gSndPlayer.pMP3 != NULL)
