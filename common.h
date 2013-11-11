@@ -76,14 +76,25 @@ extern "C"
 
 #define PAL_HAS_JOYSTICKS     1
 #define PAL_HAS_MOUSE         0
+#define PAL_HAS_MP3           0
 #define PAL_PREFIX            "SD:/apps/sdlpal/"
 #define PAL_SAVE_PREFIX       "SD:/apps/sdlpal/"
 
 #elif defined (PSP)
 
 #define PAL_HAS_JOYSTICKS     0
+#define PAL_HAS_MP3           0
+#define PAL_HAS_MOUSE         0
 #define PAL_PREFIX            "ms0:/"
 #define PAL_SAVE_PREFIX       "ms0:/PSP/SAVEDATA/SDLPAL/"
+
+#elif defined (ANDROID)
+
+#define PAL_HAS_JOYSTICKS     0
+#define PAL_HAS_MP3           0
+#define PAL_HAS_MOUSE         0
+#define PAL_PREFIX            "./"
+#define PAL_SAVE_PREFIX       "./"
 
 #else
 
