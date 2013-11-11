@@ -270,7 +270,7 @@ PAL_MouseEventFilter(
 
 --*/
 {
-#ifdef PAL_HAS_MOUSE
+#if PAL_HAS_MOUSE
    static short hitTest = 0; // Double click detect;	
    const SDL_VideoInfo *vi;
 
@@ -459,7 +459,7 @@ PAL_JoystickEventFilter(
 
 --*/
 {
-#ifdef PAL_HAS_JOYSTICKS
+#if PAL_HAS_JOYSTICKS
    switch (lpEvent->type)
    {
 #if defined (GEKKO)
@@ -754,7 +754,7 @@ PAL_InitInput(
    //
    // Check for joystick
    //
-#ifdef PAL_HAS_JOYSTICKS
+#if PAL_HAS_JOYSTICKS
    if (SDL_NumJoysticks() > 0 && g_fUseJoystick)
    {
       g_pJoy = SDL_JoystickOpen(0);
@@ -785,7 +785,7 @@ PAL_ShutdownInput(
 
 --*/
 {
-#ifdef PAL_HAS_JOYSTICKS
+#if PAL_HAS_JOYSTICKS
    if (SDL_JoystickOpened(0))
    {
       assert(g_pJoy != NULL);
