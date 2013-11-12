@@ -55,8 +55,6 @@ COMPILE UNDER MAC OS X
 To compile, open the project Pal.xcodeproj with Xcode, and click Build. You
 need to have SDL framework installed at /Library/Frameworks.
 
-The compiled bundle should work as a "universal" binary which works on both
-Intel and PowerPC.
 
 
 CLASSIC BUILD
