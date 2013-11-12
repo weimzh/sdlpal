@@ -9,10 +9,10 @@ ifndef SDL_JAVA_PACKAGE_PATH
 endif
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../sdl-1.2_jni/include $(LOCAL_PATH)/../stlport/stlport \
-	 $(LOCAL_PATH) $(LOCAL_PATH)/../../../adplug $(LOCAL_PATH)/../../../
+	 $(LOCAL_PATH) $(LOCAL_PATH)/../../../adplug $(LOCAL_PATH)/../../../libmad $(LOCAL_PATH)/../../../
 LOCAL_CFLAGS := -g -Wall -O2 -DSDL -DANDROID -DPAL_CLASSIC
 
-GAME_SRCS := ../../../adplug/*.c ../../../adplug/*.cpp ../../../*.c ../../../*.cpp
+GAME_SRCS := ../../../adplug/*.c ../../../adplug/*.cpp ../../../libmad/*.c ../../../*.c ../../../*.cpp
 LOCAL_SRC_FILES := $(foreach F, $(GAME_SRCS), $(addprefix $(dir $(F)),$(notdir $(wildcard $(LOCAL_PATH)/$(F)))))
 
 LOCAL_SHARED_LIBRARIES := sdl-1.2_jni stlport_shared
