@@ -2,12 +2,12 @@ TARGET = sdlpal.dge
 
 HOST = mipsel-linux-uclibc-
 
-SOURCES = . ./adplug
+SOURCES = . ./adplug ./timidity
 CFILES = $(foreach dir, $(SOURCES), $(wildcard $(dir)/*.c))
 CPPFILES = $(foreach dir, $(SOURCES), $(wildcard $(dir)/*.cpp))
 OFILES = $(CFILES:.c=.o) $(CPPFILES:.cpp=.o)
 
-CFLAGS = -g -Wall -O2 `sdl-config --cflags` -DDINGOO -DPAL_CLASSIC
+CFLAGS = -g -Wall -O2 `sdl-config --cflags` -DDINGOO -DPAL_CLASSIC -DTIMIDITY
 CXXFLAGS = $(CFLAGS)
 LDFLAGS = `sdl-config --libs`
 

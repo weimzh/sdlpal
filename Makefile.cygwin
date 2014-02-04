@@ -2,13 +2,13 @@ TARGET = sdlpal.exe
 
 HOST = i686-pc-cygwin-
 
-SOURCES = . ./adplug
+SOURCES = . ./adplug ./timidity
 CFILES = $(foreach dir, $(SOURCES), $(wildcard $(dir)/*.c))
 CPPFILES = $(foreach dir, $(SOURCES), $(wildcard $(dir)/*.cpp))
 RCFILES = $(foreach dir, $(SOURCES), $(wildcard $(dir)/*.rc))
 OFILES = $(CFILES:.c=.o) $(CPPFILES:.cpp=.o) $(RCFILES:.rc=.o)
 
-CFLAGS = -g -Wall -O2 `sdl-config --cflags` -DCYGWIN -DPAL_CLASSIC
+CFLAGS = -g -Wall -O2 `sdl-config --cflags` -DCYGWIN -DPAL_CLASSIC -DTIMIDITY
 CXXFLAGS = $(CFLAGS)
 LDFLAGS = `sdl-config --libs`
 

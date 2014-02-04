@@ -20,12 +20,16 @@
 
 #include "main.h"
 
-#if !defined (CYGWIN) && !defined (DINGOO) &&  !defined (GEKKO) && !defined (GPH) && !defined (ANDROID)
-
 static INT iMidCurrent = -1;
 static BOOL fMidLoop = FALSE;
 
+#ifdef TIMIDITY
+#include "timidity/timidity.h"
+
+static MidiSong *g_pMid = NULL;
+#else
 static NativeMidiSong *g_pMid = NULL;
+#endif
 
 VOID
 MIDI_Play(
@@ -54,13 +58,21 @@ MIDI_Play(
    int              size;
    SDL_RWops       *rw;
 
+#ifdef TIMIDITY
+   if (g_pMid != NULL && iNumRIX == iMidCurrent && Timidity_Active())
+#else
    if (g_pMid != NULL && iNumRIX == iMidCurrent && native_midi_active())
+#endif
    {
       return;
    }
 
    SOUND_PlayCDA(-1);
+#ifdef TIMIDITY
+   Timidity_FreeSong(g_pMid);
+#else
    native_midi_freesong(g_pMid);
+#endif
    g_pMid = NULL;
    iMidCurrent = -1;
 
@@ -95,10 +107,18 @@ MIDI_Play(
 
    rw = SDL_RWFromConstMem((const void *)buf, size);
 
+#ifdef TIMIDITY
+   g_pMid = Timidity_LoadSong_RW(rw);
+#else
    g_pMid = native_midi_loadsong_RW(rw);
+#endif
    if (g_pMid != NULL)
    {
+#ifdef TIMIDITY
+      Timidity_Start(g_pMid);
+#else
       native_midi_start(g_pMid);
+#endif
 
       iMidCurrent = iNumRIX;
       fMidLoop = fLoop;
@@ -113,10 +133,12 @@ MIDI_CheckLoop(
    VOID
 )
 {
+#ifdef TIMIDITY
+   if (fMidLoop && g_pMid != NULL && !Timidity_Active())
+#else
    if (fMidLoop && g_pMid != NULL && !native_midi_active())
+#endif
    {
       MIDI_Play(iMidCurrent, TRUE);
    }
 }
-
-#endif

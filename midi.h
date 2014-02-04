@@ -28,7 +28,9 @@ extern "C"
 {
 #endif
 
-#include "native_midi/native_midi.h"
+#ifndef TIMIDITY
+	#include "native_midi/native_midi.h"
+#endif
 
 VOID
 MIDI_Play(
