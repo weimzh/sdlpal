@@ -21,7 +21,7 @@ FILES += $(ADPLUG_FILES)
 FILES += $(LIBMAD_FILES)
 
 CFLAGS = `sdl-config --cflags` -g -Wall -O2 -fno-strict-aliasing
-LDFLAGS = `sdl-config --libs` -lstdc++ -lm
+LDFLAGS = `sdl-config --libs` -lstdc++ -lm -ldl
 
 $(TARGET):
 	$(HOST)gcc $(CFLAGS) -o $(TARGET) $(FILES) $(LDFLAGS)
