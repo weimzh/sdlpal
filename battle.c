@@ -1440,7 +1440,7 @@ PAL_StartBattle(
    PAL_ClearAllPlayerStatus();
    for (w = 0; w < MAX_PLAYER_ROLES; w++)
    {
-      PAL_CurePoisonByLevel(w, 3);
+      PAL_CurePoisonByLevel(w, MAX_POISON_LEVEL);
       PAL_RemoveEquipmentEffect(w, kBodyPartExtra);
    }
 

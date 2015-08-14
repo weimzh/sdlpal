@@ -1889,3 +1889,49 @@ PAL_PlayerLevelUp(
    gpGlobals->Exp.rgPrimaryExp[wPlayerRole].wLevel =
       gpGlobals->g.PlayerRoles.rgwLevel[wPlayerRole];
 }
+
+VOID
+PAL_New_SortPoisonsForPlayerByLevel(
+	WORD			wPlayerRole
+	)
+{
+	int         i, j, index, PoisonNum;
+	WORD        wPoisonID1, wPoisonID2;
+	WORD        wPoisonLevel1, wPoisonLevel2;
+	POISONSTATUS	tempPoison;
+
+	for (index = 0; index <= gpGlobals->wMaxPartyMemberIndex; index++)
+	{
+		if (gpGlobals->rgParty[index].wPlayerRole == wPlayerRole)break;
+	}
+
+	if (index > gpGlobals->wMaxPartyMemberIndex)return; // don't go further
+
+	for (j = 0, PoisonNum = 0; j < MAX_POISONS; j++)
+	{
+		wPoisonID1 = gpGlobals->rgPoisonStatus[j][index].wPoisonID;
+		if (wPoisonID1 == 0) gpGlobals->rgPoisonStatus[j][index].wPoisonScript = 0;
+		else PoisonNum++;
+	}
+
+	if (PoisonNum < 2)	return;	//中毒数目小于2不用排序
+
+
+	for (i = 0; i < MAX_POISONS - 1; i++)
+	{
+		for (j = 0; j < MAX_POISONS - i - 1; j++)
+		{
+			wPoisonID1 = gpGlobals->rgPoisonStatus[j][index].wPoisonID;
+			wPoisonLevel1 = gpGlobals->g.rgObject[wPoisonID1].poison.wPoisonLevel;
+			wPoisonID2 = gpGlobals->rgPoisonStatus[j + 1][index].wPoisonID;
+			wPoisonLevel2 = gpGlobals->g.rgObject[wPoisonID2].poison.wPoisonLevel;
+
+			if (wPoisonLevel1 < wPoisonLevel2)
+			{
+				tempPoison = gpGlobals->rgPoisonStatus[j][index];
+				gpGlobals->rgPoisonStatus[j][index] = gpGlobals->rgPoisonStatus[j + 1][index];
+				gpGlobals->rgPoisonStatus[j + 1][index] = tempPoison;
+			}
+		}
+	}
+}

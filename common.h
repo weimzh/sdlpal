@@ -22,7 +22,9 @@
 #define _COMMON_H
 
 //#define PAL_WIN95          1 // not valid for now
-//#define PAL_CLASSIC        1
+#define PAL_CLASSIC        1
+
+#define MAX_POISON_LEVEL					99		//复活后解除的毒的最高等级；99一般为装备技能，如寿葫芦
 
 #ifdef __cplusplus
 extern "C"
