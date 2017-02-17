@@ -770,6 +770,11 @@ PAL_PlayerLevelUp(
    WORD          wNumLevel
 );
 
+VOID 
+PAL_New_SortPoisonsForPlayerByLevel(
+	WORD wPlayerRole
+);
+
 #ifdef __cplusplus
 }
 #endif

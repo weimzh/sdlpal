@@ -1028,7 +1028,7 @@ PAL_InterpretInstruction(
                gpGlobals->g.PlayerRoles.rgwHP[w] =
                   gpGlobals->g.PlayerRoles.rgwMaxHP[w] * pScript->rgwOperand[1] / 10;
 
-               PAL_CurePoisonByLevel(w, 3);
+               PAL_CurePoisonByLevel(w, MAX_POISON_LEVEL);
                for (x = 0; x < kStatusAll; x++)
                {
                   PAL_RemovePlayerStatus(w, x);

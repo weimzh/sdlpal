@@ -43,7 +43,8 @@ PAL_IsPlayerDying(
 
 --*/
 {
-   return gpGlobals->g.PlayerRoles.rgwHP[wPlayerRole] < gpGlobals->g.PlayerRoles.rgwMaxHP[wPlayerRole] / 5;
+   return gpGlobals->g.PlayerRoles.rgwHP[wPlayerRole] < gpGlobals->g.PlayerRoles.rgwMaxHP[wPlayerRole] / 5
+	   && gpGlobals->g.PlayerRoles.rgwHP[wPlayerRole] < 100;      // 还需要低于100
 }
 
 INT
@@ -1555,6 +1556,20 @@ PAL_BattleStartFrame(
          {
             wPlayerRole = gpGlobals->rgParty[i].wPlayerRole;
 
+
+			//
+			// Update statuses
+			// 更新状态应在执行中毒脚本前
+			for (j = 0; j < kStatusAll; j++)
+			{
+				if (gpGlobals->rgPlayerStatus[wPlayerRole][j] > 0)
+				{
+					gpGlobals->rgPlayerStatus[wPlayerRole][j]--;
+				}
+			}
+
+			// 执行中毒脚本前、后都需要排序
+			PAL_New_SortPoisonsForPlayerByLevel(wPlayerRole);
             for (j = 0; j < MAX_POISONS; j++)
             {
                if (gpGlobals->rgPoisonStatus[j][i].wPoisonID != 0)
@@ -1563,17 +1578,7 @@ PAL_BattleStartFrame(
                      PAL_RunTriggerScript(gpGlobals->rgPoisonStatus[j][i].wPoisonScript, wPlayerRole);
                }
             }
-
-            //
-            // Update statuses
-            //
-            for (j = 0; j < kStatusAll; j++)
-            {
-               if (gpGlobals->rgPlayerStatus[wPlayerRole][j] > 0)
-               {
-                  gpGlobals->rgPlayerStatus[wPlayerRole][j]--;
-               }
-            }
+			PAL_New_SortPoisonsForPlayerByLevel(wPlayerRole);
          }
 
          for (i = 0; i <= g_Battle.wMaxEnemyIndex; i++)
